@@ -6,8 +6,8 @@ import Result from "./Result.js";
 
 class GameArea extends React.Component {
   state = {
-    playerOne: false,
-    playerTwo: true,
+    playerOne: true,
+    playerTwo: false,
     result: false,
     pOneChoice: "",
     pTwoChoice: "",

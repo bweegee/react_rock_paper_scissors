@@ -5,10 +5,25 @@ import paper from "./images/paper.png";
 import rock from "./images/rock.png";
 import scissors from "./images/scissors.png";
 
+const imageArray = [
+  <Image src={rock} alt="rock" size="small" />,
+  <Image src={paper} alt="paper" size="small" />,
+  <Image src={scissors} alt="scissors" size="small" />,
+  ]
+
+const renderImages = () => {
+  return imageArray.map ((image, i) => (
+    <Grid.Row key={i}>
+      {image}
+    </Grid.Row>
+    )
+  )
+}
+
 const PlayerTwo = ({ playerTwo }) => (
   <Container>
   <Segment inverted raised color="green">
-    <Header as="h1" color="white">
+    <Header as="h1">
       Player 2 Turn
     </Header>
   </Segment>
@@ -18,9 +33,9 @@ const PlayerTwo = ({ playerTwo }) => (
     </Grid.Column>
 
     <Grid.Column>
-      <Image src={rock} alt="" bordered size="small" />
-      <Image src={paper} alt="" bordered size="small" />
-      <Image src={scissors} alt="" bordered size="small" />
+        <Grid columns={1}>
+        { renderImages() }
+        </Grid>
     </Grid.Column>
     
     <Grid.Column>
