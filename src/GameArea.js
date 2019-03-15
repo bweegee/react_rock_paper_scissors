@@ -6,19 +6,24 @@ import Result from "./Result.js";
 
 class GameArea extends React.Component {
   state = {
-    playerOne: true,
-    playerTwo: false,
+    playerOne: false,
+    playerTwo: true,
     result: false,
     pOneChoice: "",
     pTwoChoice: "",
   };
+
   render() {
-    return (
-      <Container>
-        playerOne ? <PlayerOne choice={this.state.pOneChoice} /> : null;
-        playerTwo ? <PlayerTwo choice={this.state.pTwoChoice} /> : null;
-      </Container>
-    )
+    if ((!this.state.playerOne) && (!this.state.playerTwo)) {
+      return <Result 
+                pOne={this.state.pOneChoice}
+                pTwo={this.state.pTwoChoice}
+              />
+    } 
+      return (
+        this.state.playerOne ? <PlayerOne choice={this.state.pOneChoice} /> : <PlayerTwo choice={this.state.pTwoChoice} />
+      )
+
   }
 }
 

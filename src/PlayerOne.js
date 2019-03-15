@@ -1,11 +1,17 @@
 import React from "react";
-import {Grid, Image, } from "semantic-ui-react";
+import {Grid, Image, Container, Header, Segment, } from "semantic-ui-react";
 import mario from "./images/Mario.png";
 import paper from "./images/paper.png";
 import rock from "./images/rock.png";
 import scissors from "./images/scissors.png";
 
 const PlayerOne = ({ playerOne }) => (
+  <Container>
+  <Segment inverted raised color="red">
+    <Header as="h1" color="white">
+      Player 1 Turn
+    </Header>
+  </Segment>
   <Grid columns={3} textAlign="center">
     <Grid.Row>
       <Grid.Column>
@@ -24,6 +30,7 @@ const PlayerOne = ({ playerOne }) => (
 
     </Grid.Row>
   </Grid>
+  </Container>
 );
 
 export default PlayerOne;

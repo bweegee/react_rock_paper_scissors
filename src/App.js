@@ -3,8 +3,6 @@ import './App.css';
 import { Container, } from "semantic-ui-react";
 import ScoreBoard from "./ScoreBoard.js";
 import GameArea from "./GameArea.js";
-import PlayerOne from "./PlayerOne.js";
-import PlayerTwo from "./PlayerTwo.js";
 
 class App extends Component {
   state = {
@@ -26,8 +24,6 @@ class App extends Component {
           tie={this.state.tie}
         />
         <GameArea />
-        <PlayerTwo />
-        <PlayerOne />
       </Container>
     )
   }
